@@ -1,0 +1,64 @@
+COMO YA HEMOS INDICADO ESTAMOS TRABAJANDO LOS 3 DESDE LA MISMA MAQUINA 
+
+PARTE EDU
+
+¿Qué cuatro variables necesita WordPress para conectarse?
+    las cuatro variables para conectarse: WORDPRESS_DB_HOST, WORDPRESS_DB_USER, WORDPRESS_DB_PASSWORD y WORDPRESS_DB_NAME
+
+b) ¿Qué pones en WORDPRESS_DB_HOST y porqué funciona?
+
+    Qué va en WORDPRESS_DB_HOST y por qué funciona: va db, el nombre del servicio. Compose mete los dos servicios en una red por defecto y en esa red cada contenedor encuentra a los demás por su nombre de servicio (service discovery). No hay que poner ninguna IP.
+
+
+
+c) ¿Cómo se escribe «el 8080 de la VM al 80 del contenedor»?
+    “El 8080 de la VM al 80 del contenedor”: "8080:80". Primero va el puerto de la VM y después el del contenedor
+ 
+ 
+ d) ¿Qué carpeta de WordPress va en un volumen?
+    Carpeta de WordPress que va en un volumen: /var/www/html. Ahí están WordPress, los temas, los plugins y las imágenes que se suben
+
+
+
+
+PARTE MARCOS
+
+Nuestro usuario de Wordpress --> "admin_butarque"
+Nuestra contraseña de Wordpress  --> "Grupo5_Wordpress"
+
+a) El asistente de la documentación pide los datos de la base. ¿Al tuyo se los has dado ya? ¿Dónde?
+Sí. Se los dimos en el compose.yaml, con las variables WORDPRESS_DB_HOST, WORDPRESS_DB_USER, WORDPRESS_DB_PASSWORD y WORDPRESS_DB_NAME del servicio wordpress. 
+La imagen oficial crea el wp-config.php a partir de esas variables, así que el asistente se salta la pantalla de la base de datos y va directo a la del sitio
+
+
+
+PARTE ALEJANDRO 
+Escribe tú las dos órdenes: dentro del servicio db y entrando como app_butarque 
+ a) la que lista las bases que ve y 
++--------------------+
+| Database           |
++--------------------+
+| butarque           |
+| information_schema |
++--------------------+
+
+
+
+
+b) la que lista las tablas de butarque.
++-----------------------+
+| Tables_in_butarque    |
++-----------------------+
+| wp_commentmeta        |
+| wp_comments           |
+| wp_links              |
+| wp_options            |
+| wp_postmeta           |
+| wp_posts              |
+| wp_term_relationships |
+| wp_term_taxonomy      |
+| wp_termmeta           |
+| wp_terms              |
+| wp_usermeta           |
+| wp_users              |
++-----------------------+
